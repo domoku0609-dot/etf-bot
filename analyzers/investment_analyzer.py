@@ -2,10 +2,10 @@ import json
 import time
 from config import CONFIDENCE_THRESHOLD
 from gemini_client import call_gemini
-from etf_fetcher import format_etf_for_prompt
-from market_fetcher import format_market_for_prompt
-from sentiment_analyzer import format_sentiment_for_prompt, parse_json_response
-from news_scraper import format_news_for_prompt
+from fetchers.etf_fetcher import format_etf_for_prompt
+from fetchers.market_fetcher import format_market_for_prompt
+from analyzers.sentiment_analyzer import format_sentiment_for_prompt, parse_json_response
+from scrapers.news_scraper import format_news_for_prompt
 
 # 投資分析 System Prompt
 INVESTMENT_SYSTEM_PROMPT = """
@@ -211,9 +211,9 @@ def run_batch_analysis(
 
 if __name__ == "__main__":
     # 測試用假數據
-    from etf_fetcher import fetch_etf_data
-    from market_fetcher import fetch_market_data
-    from news_scraper import fetch_news
+    from fetchers.etf_fetcher import fetch_etf_data
+    from fetchers.market_fetcher import fetch_market_data
+    from scrapers.news_scraper import fetch_news
 
     test_sentiment = {
         "positive_pct":    60,
