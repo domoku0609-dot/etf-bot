@@ -10,7 +10,7 @@ on:
 
 jobs:
   analyze:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15  # 最長執行 15 分鐘，避免卡住
 
     steps:
@@ -46,13 +46,3 @@ jobs:
           SMTP_TO:                    ${{ secrets.SMTP_TO }}
           SMTP_USE_SSL:               ${{ vars.SMTP_USE_SSL || 'false' }}
           SMTP_USE_TLS:               ${{ vars.SMTP_USE_TLS || 'true' }}
-
-      # 5. 執行失敗時輸出詳細錯誤（方便除錯）
-      - name: Upload log on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: error-log-${{ github.run_id }}
-          path: |
-            *.log
-          retention-days: 7
