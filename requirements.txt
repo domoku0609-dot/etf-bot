@@ -1,0 +1,15 @@
+# 數據抓取
+yfinance==0.2.40
+feedparser==6.0.11
+requests==2.32.3
+beautifulsoup4==4.12.3
+
+# AI 分析
+google-generativeai==0.8.3
+
+# 數據處理
+pandas==2.2.2
+numpy==1.26.4
+
+# 技術指標計算（RSI、KD、布林通道）
+ta==0.11.0
