@@ -2,7 +2,7 @@ import json
 import re
 from config import SENTIMENT_THRESHOLD
 from gemini_client import call_gemini
-from ptt_scraper import format_comments_for_prompt
+from scrapers.ptt_scraper import format_comments_for_prompt
 
 # 情緒分析的 System Prompt
 SENTIMENT_SYSTEM_PROMPT = """
